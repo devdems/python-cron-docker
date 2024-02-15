@@ -7,7 +7,7 @@ RUN apt-get update && apt-get -y install cron vim
 WORKDIR /app
 
 # Install Python dependencies
-RUN pip3 install holidays mysql mysql-connector mysql-connector-python pymodbus solaredge_modbus telegram python-telegram-bot
+RUN pip3 install holidays mysql mysql-connector mysql-connector-python pymodbus solaredge_modbus telegram python-telegram-bot requests
 
 # Start cron service as the main process of the container, redirecting output to stdout and stderr
 CMD cron && tail -f /dev/null
