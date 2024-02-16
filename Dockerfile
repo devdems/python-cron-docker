@@ -1,13 +1,12 @@
-FROM python:3.7
+FROM python:3.7-alpine
 
-# Install cron and vim
-RUN apt-get update && apt-get -y install cron vim
+RUN apk update && apk add --no-cache \
+  bash \
+  && rm -fr /tmp/*
 
-# Set working directory
+RUN pip install holidays mysql-connector-python pymodbus solaredge_modbus telegram 
+
 WORKDIR /app
 
-# Install Python dependencies
-RUN pip3 install holidays mysql mysql-connector mysql-connector-python pymodbus solaredge_modbus telegram python-telegram-bot requests
-
-# Start the script as the main process of the container
-CMD ["/app/run_script.sh"]
+# Run the daemon
+CMD python script.py
