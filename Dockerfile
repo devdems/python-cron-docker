@@ -1,7 +1,7 @@
 FROM python:3.7-alpine
 
 # Upgrade pip
-RUN pip3 install --upgrade pip mariadb-dev
+RUN pip3 install --upgrade pip
 
 # Set working directory
 WORKDIR /app
