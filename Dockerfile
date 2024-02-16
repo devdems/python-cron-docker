@@ -9,4 +9,4 @@ RUN pip install holidays mysql-connector-python pymodbus solaredge_modbus telegr
 WORKDIR /app
 
 # Run the daemon
-CMD run_script.sh
+CMD ["sh", "run_script.sh"]
