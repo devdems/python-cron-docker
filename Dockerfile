@@ -4,7 +4,7 @@ RUN apk update && apk add --no-cache \
   bash \
   && rm -fr /tmp/*
 
-RUN pip install holidays mysql-connector-python pymodbus solaredge_modbus telegram 
+RUN pip install holidays mysql-connector-python pymodbus solaredge_modbus telegram requests
 
 WORKDIR /app
 
