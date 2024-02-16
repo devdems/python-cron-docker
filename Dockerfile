@@ -1,8 +1,7 @@
 FROM python:3.7-alpine
 
 # Install cron and vim
-RUN apk update && \
-    apk add --no-cache cron vim
+RUN apk add --no-cache cron vim
 
 # Set working directory
 WORKDIR /app
